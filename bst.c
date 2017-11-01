@@ -1,13 +1,18 @@
-/*
- * Add a file header here
- */
+#include "bst.h"
+#include <stdio.h>
+#include <string.h>
 
-/* Here are list of possible helpers that you may need.*/
-//struct BSTNode* bst_addHelper(struct BSTNode* root, char*key);
-//void bst_addHelper(struct BSTNode* node, char*key);
-//struct BSTNode* bst_removeHelper(struct BSTNode* node, char*key);
-//void bst_removeHelper(struct BSTNode* node, char*key);
-//void bst_deleteTreeHelper(struct BSTNode* node);
+// You might find implementing functions with these signatures useful.  (For
+// the ones with two options listed per function, you should only implement one
+// -- that is, don't implement both versions of bst_addHelper).
+
+// void bst_addHelper(struct BSTNode* node, char* key);
+// struct BSTNode* bst_addHelper(struct BSTNode* node, char* key);
+
+// struct BSTNode* bst_removeHelper(struct BSTNode* node, char* key);
+// void bst_removeHelper(struct BSTNode* node, char* key);
+
+// void bst_deleteTreeHelper(struct BSTNode* node);
 
 /**
  *  bst_max - finds the key of the largest (rightmost) node in this bst.

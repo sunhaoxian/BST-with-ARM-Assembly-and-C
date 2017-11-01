@@ -16,7 +16,7 @@ test: test.run
 vtest: test.run
 	$(VG) ./test.run
 
-test.run: bst.o test.c runtests.c
+test.run: bst.o test.c runtests.c count.o totalLength.o
 	gcc -Wall -g -o test.run test.c runtests.c cutest/CuTest.c bst.o count.o totalLength.o
 
 bst.o: bst.h bst.c

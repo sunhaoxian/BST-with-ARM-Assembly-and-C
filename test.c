@@ -12,13 +12,35 @@
  *
  */
 void TestManualMallocAndFree(CuTest *tc) {
-  struct BSTNode* bst = (struct BSTNode*)malloc(sizeof(struct BSTNode));
-  bst->key = strdup("abcd");
-  bst->left = NULL;
-  bst->right = NULL;
-  CuAssertStrEquals(tc, "abcd", bst->key);
+  // This is a lot of manually allocating! Once you write bst_makeNode, this
+  // can get simpler
+  struct BSTNode* node = (struct BSTNode*)malloc(sizeof(struct BSTNode));
+  node->key = strdup("apple");
+  node->left = NULL;
+  node->right = NULL;
+  CuAssertStrEquals(tc, "apple", node->key);
 
-  free(bst->key);
+  struct BSTNode* forRight = (struct BSTNode*)malloc(sizeof(struct BSTNode));
+  forRight->key = strdup("cranberry");
+  forRight->left = NULL;
+  forRight->right = NULL;
+
+  struct BST* bst = (struct BST*)malloc(sizeof(struct BST*));
+  bst->root = node;
+  bst->root->right = forRight;
+
+  CuAssertStrEquals(tc, "cranberry", bst_max(bst));
+
+  // This is a lot of freeing! Once you write the delete functions this won't
+  // be necessary anymore; the next five lines should really just be
+  // bst_deleteTree
+
+  free(forRight->key);
+  free(forRight);
+
+  free(node->key);
+  free(node);
+
   free(bst);
 }
 
