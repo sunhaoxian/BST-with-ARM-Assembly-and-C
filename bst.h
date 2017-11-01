@@ -16,21 +16,16 @@ struct BST {
 
 // In C
 struct BSTNode* bst_makeNode(char* key, struct BSTNode* left, struct BSTNode* right);
-struct BSTNode* bst_addHelper(struct BSTNode* root, char*key);
-// void bst_addHelper(struct BSTNode* node, char*key);
-struct BSTNode* bst_add(struct BST* bst, char* key);
-struct BSTNode* bst_removeHelper(struct BSTNode* node, char*key);
-// void bst_removeHelper(struct BSTNode* node, char*key);
+void bst_add(struct BST* bst, char* key);
 void bst_remove(struct BST* bst, char* key);
 int bst_contains(struct BST* bst, char* key);
 char* bst_max(struct BST* bst);
 char* bst_min(struct BST* bst);
 void bst_deleteTree(struct BST* bst);
-void bst_deleteTreeHelper(struct BSTNode* node);
 
 // In assembly (helper functions for bst_count and bst_totalLength)
-int count(struct BSTNode* bst);
-int totalLength(struct BSTNode* bst);
+int count(struct BSTNode* node);
+int totalLength(struct BSTNode* node);
 
 // Two C functions, implemented with Assembly helpers
 int bst_count(struct BST* bst);
