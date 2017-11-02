@@ -25,7 +25,7 @@ void TestManualMallocAndFree(CuTest *tc) {
   forRight->left = NULL;
   forRight->right = NULL;
 
-  struct BST* bst = (struct BST*)malloc(sizeof(struct BST*));
+  struct BST* bst = (struct BST*)malloc(sizeof(struct BST));
   bst->root = node;
   bst->root->right = forRight;
 
